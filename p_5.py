@@ -74,3 +74,51 @@ if solution:
 
 else:
     print("No solution found.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+Algorithm: Block World Problem using Breadth-First Search (BFS)
+
+1. Start the program.
+2. Import the deque module to implement a queue.
+3. Define the initial state with blocks A, B, and C arranged in a single stack.
+4. Define the goal state with the blocks arranged in the required order.
+5. Generate all possible successor states by performing the following operations:
+   a) Select the top block from each non-empty stack.
+   b) Move the selected block onto another existing stack.
+   c) Move the selected block to a new separate stack.
+   d) Generate a new state after each move.
+6. Initialize a queue with the initial state and an empty path.
+7. Create a visited set and add the initial state to avoid repeating states.
+8. Repeat while the queue is not empty:
+   a) Remove the first state from the queue.
+   b) Check whether the current state matches the goal state.
+   c) If yes, return the solution path.
+   d) Otherwise, generate all possible successor states.
+   e) If a successor state is not visited, add it to the visited set and queue along with the updated path.
+9. If the queue becomes empty without reaching the goal, return None.
+10. Display the solution path step by step, showing the arrangement of blocks in each stack.
+11. If no solution exists, display "No solution found".
+12. Stop the program.
+'''
