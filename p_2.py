@@ -1,0 +1,48 @@
+grid = [['s',0,0],
+        ['x',0,0],
+        [0,0,'g']]
+
+visited = []
+row = 0
+col = 0
+goal = (2,2)
+
+print("Grid Navigation Begins...")
+
+while True:
+    if (row,col) not in visited:
+        visited.append((row,col))
+    print("Current position : ",(row,col))
+    print("Visited : ",visited)
+
+    if (row,col) == goal:
+        print("Goal Completed...")
+        break
+
+    moved = False
+
+    if col+1 < 3 and grid[row][col+1] != 'x' and (row,col+1) not in visited:
+        print("Action : MOVE RIGHT")
+        col+=1
+        moved = True 
+
+    elif row+1 < 3 and grid[row+1][col] != 'x' and (row+1 , col) not in visited :
+        print("Action : MOVE DOWN")
+        row+=1
+        moved = True
+
+    elif col-1 >=0 and grid[row][col-1] != 'x' and (row,col-1) not in visited :
+        print("Action : MOVE LEFT")
+        col-=1 
+        moved = True
+
+    elif row-1 >= 0 and grid[row-1][col] != 'x' and (row-1,col) not in visited:
+        print("Action : MOVE UP")
+        row-=1
+        moved = True
+
+    if not moved:
+        print("No valid move available...")
+        break
+
+print("Final Visited Cells : ",visited)
