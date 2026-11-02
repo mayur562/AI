@@ -128,34 +128,25 @@ puz.process()
 
 '''
 Algorithm: 8-Puzzle Problem using A* Search Algorithm
-Start the program.
-Define a Node class to store the puzzle state, level, and evaluation value (fval).
-Define a function to find the blank space (_) in the puzzle.
-Generate child nodes by moving the blank space LEFT, RIGHT, UP, or DOWN.
-Check whether each movement is within the grid boundaries.
-Create a new puzzle state by swapping the blank space with the adjacent tile.
-Define a Puzzle class and initialize the puzzle size, OPEN list, and CLOSED list.
-Accept the initial state and goal state matrices from the user.
-Calculate the heuristic value by counting the number of misplaced tiles, excluding the blank space.
-Calculate the evaluation function using:
 
-f(n) = g(n) + h(n)
-
-g(n) = Current level or path cost.
-h(n) = Number of misplaced tiles.
-Insert the initial state into the OPEN list.
-Repeat the following steps:
-Select the node with the lowest fval from the OPEN list.
-Display the current puzzle state.
-Check whether the current state matches the goal state.
-If yes, terminate the search.
-Otherwise, generate all possible child states.
-Calculate the fval of each child and add it to the OPEN list.
-Move the current node to the CLOSED list.
-Remove the current node from the OPEN list.
-Sort the OPEN list according to the lowest fval.
-Continue until the goal state is reached.
-Stop the program.
+1. Define a Node class to store the puzzle state, current level, and evaluation value (f-value).
+2. Accept the initial state and goal state as 3×3 matrices from the user.
+3. Calculate the heuristic value (h) by counting the number of misplaced tiles, excluding the blank space (_).
+4. Calculate the evaluation function using the formula:
+   f(n) = g(n) + h(n)
+   where g(n) is the current level and h(n) is the heuristic value.
+5. Insert the initial state into the OPEN list.
+6. Repeat the following steps until the goal state is reached:
+   a) Select the node with the lowest f-value from the OPEN list.
+   b) Display the current puzzle state.
+   c) Check whether the current state matches the goal state. If yes, stop.
+   d) Find the blank space (_) in the current state.
+   e) Generate child states by moving the blank space Left, Right, Up, and Down.
+   f) Ignore invalid moves that go outside the puzzle boundaries.
+   g) Calculate the f-value for each generated child and add it to the OPEN list.
+   h) Move the current node to the CLOSED list.
+   i) Remove the current node from the OPEN list and sort OPEN in ascending order of f-value.
+7. Continue until the goal state is reached.
 '''
 		
 	
