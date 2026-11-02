@@ -134,3 +134,64 @@ while True:
         print_board()
         print("It's a Draw!")
         break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+Algorithm: Tic-Tac-Toe using Minimax Algorithm
+
+1. Start the program.
+2. Import the math module and initialize a 3×3 game board with empty spaces.
+3. Define a function to display the Tic-Tac-Toe board.
+4. Define a function to check whether a player has won by checking all rows, columns, and diagonals.
+5. Define a function to check whether the game is a draw when all positions are filled.
+6. Implement the Minimax algorithm to find the best possible move for the AI:
+   a) If AI (O) wins, return +1.
+   b) If the human player (X) wins, return -1.
+   c) If the board is full, return 0.
+   d) If it is the AI's turn, select the move with the maximum score.
+   e) If it is the human's turn, select the move with the minimum score.
+   f) Try each empty position, calculate its score recursively, and undo the move after checking.
+7. Define the AI move function:
+   a) Check all available positions.
+   b) Temporarily place O in each empty position.
+   c) Use Minimax to calculate the score.
+   d) Select the position with the highest score and place O there.
+8. Define the human move function to accept a position between 1 and 9.
+9. Validate the user's input and allow only valid empty positions.
+10. Display the board and start the game loop.
+11. Accept the human player's move and check for a win or draw.
+12. If the game is not over, let the AI make its best move.
+13. After the AI move, check again for a win or draw.
+14. Repeat until a player wins or the game ends in a draw.
+15. Display the final result and stop the program.
+
+'''
