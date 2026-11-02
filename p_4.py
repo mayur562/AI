@@ -107,28 +107,30 @@ else:
 
 
 '''
-Start the program.
-Import the deque module to implement a queue.
-Accept the number of disks from the user.
-Accept the starting peg of each disk (A, B, or C), from largest to smallest.
-Store the initial state as a tuple and set the goal state with all disks on Peg C.
-Find the top disk of each peg.
-Generate all possible valid moves by checking the following conditions:
-The destination peg must be empty or contain a larger disk.
-A disk cannot be moved onto a smaller disk.
-Apply the selected move by transferring the disk from the source peg to the destination peg.
-Initialize a queue with the initial state and an empty path.
-Create a visited set to avoid repeating previously explored states.
-Repeat while the queue is not empty:
-Remove the first state from the queue.
-Check whether the current state matches the goal state.
-If yes, return the solution path.
-Otherwise, generate all valid moves.
-Apply each move to create a new state.
-If the new state is not visited, add it to the visited set and queue.
-If the queue becomes empty without finding the goal, return None.
-Display the initial state and goal state.
-If a solution exists, display the minimum number of moves and the steps required to move the disks.
-Otherwise, display "No solution exists".
-Stop the program.
+Algorithm: Tower of Hanoi using BFS
+
+1. Start the program.
+2. Import the deque module to implement a queue.
+3. Accept the number of disks from the user.
+4. Accept the starting peg of each disk (A, B, or C), from largest to smallest.
+5. Store the initial state as a tuple and set the goal state with all disks on Peg C.
+6. Find the top disk of each peg to identify which disks can be moved.
+7. Generate all possible valid moves by checking the following conditions:
+   a) The destination peg must be empty or contain a larger disk.
+   b) A larger disk cannot be placed on a smaller disk.
+8. Apply each valid move by transferring the disk from the source peg to the destination peg, creating a new state.
+9. Initialize a queue with the initial state and an empty path.
+10. Create a visited set to avoid exploring previously visited states.
+11. Repeat while the queue is not empty:
+    a) Remove the first state from the queue.
+    b) Check whether the current state matches the goal state.
+    c) If yes, return the solution path.
+    d) Otherwise, generate all valid moves.
+    e) Apply each move to create a new state.
+    f) If the new state is not visited, add it to the visited set and queue along with the updated path.
+12. If the queue becomes empty without finding the goal, return None.
+13. Display the initial state and goal state.
+14. If a solution exists, display the minimum number of moves and step-by-step disk movements.
+15. Otherwise, display "No solution exists".
+16. Stop the program.
 '''
