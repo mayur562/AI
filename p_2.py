@@ -46,3 +46,53 @@ while True:
         break
 
 print("Final Visited Cells : ",visited)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+Algorithm: Grid Navigation using Search
+Start the program.
+Initialize a 3×3 grid with a starting point (S), goal point (G), obstacles (X), and empty cells (0).
+Initialize an empty list called visited to store the visited positions.
+Set the starting position to row 0 and column 0, and the goal position to (2,2).
+Start a while True loop.
+Add the current position to the visited list if it is not already visited.
+Display the current position and visited cells.
+Check whether the current position is equal to the goal position.
+If yes, display "Goal Completed" and terminate the loop.
+Set moved = False.
+Check possible movements in the following order:
+Move RIGHT if the next cell is valid, not an obstacle, and not visited.
+Otherwise, move DOWN under the same conditions.
+Otherwise, move LEFT.
+Otherwise, move UP.
+Update the row or column according to the movement and set moved = True.
+If no valid movement is available, display a message and stop the loop.
+Display all the final visited cells.
+Stop the program.
+'''
