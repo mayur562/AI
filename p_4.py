@@ -4,14 +4,11 @@ from collections import deque
 def get_valid_moves(state, num_disks, num_pegs=3):
     legal_moves = []
 
-    # Find the top disk on each peg
     top_disks = {peg: -1 for peg in range(num_pegs)}
 
-    # Disk 0 = largest, Disk n-1 = smallest
     for disk in range(num_disks - 1, -1, -1):
         top_disks[state[disk]] = disk
 
-    # Generate valid moves
     for source in range(num_pegs):
         if top_disks[source] != -1:
             source_disk = top_disks[source]
@@ -53,7 +50,6 @@ def solve_hanoi_bfs(initial_state, goal_state, num_disks):
     return None
 
 
-# ---------------- MAIN ----------------
 
 n = int(input("Enter number of disks: "))
 
@@ -68,7 +64,7 @@ for i in range(n, 0, -1):
     initial.append(peg)
 
 initial_state = tuple(initial)
-goal_state = tuple([2] * n)  # All disks on Peg C
+goal_state = tuple([2] * n)  
 
 solution = solve_hanoi_bfs(initial_state, goal_state, n)
 
@@ -87,3 +83,52 @@ if solution:
         )
 else:
     print("No solution exists.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+Start the program.
+Import the deque module to implement a queue.
+Accept the number of disks from the user.
+Accept the starting peg of each disk (A, B, or C), from largest to smallest.
+Store the initial state as a tuple and set the goal state with all disks on Peg C.
+Find the top disk of each peg.
+Generate all possible valid moves by checking the following conditions:
+The destination peg must be empty or contain a larger disk.
+A disk cannot be moved onto a smaller disk.
+Apply the selected move by transferring the disk from the source peg to the destination peg.
+Initialize a queue with the initial state and an empty path.
+Create a visited set to avoid repeating previously explored states.
+Repeat while the queue is not empty:
+Remove the first state from the queue.
+Check whether the current state matches the goal state.
+If yes, return the solution path.
+Otherwise, generate all valid moves.
+Apply each move to create a new state.
+If the new state is not visited, add it to the visited set and queue.
+If the queue becomes empty without finding the goal, return None.
+Display the initial state and goal state.
+If a solution exists, display the minimum number of moves and the steps required to move the disks.
+Otherwise, display "No solution exists".
+Stop the program.
+'''
